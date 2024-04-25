@@ -1,0 +1,35 @@
+Installing Redux, Redux toolkit
+ > npm install @reduxjs/toolkit react-redux
+
+**********************************************************
+Defining API 
+
+
+To define an API service using RTK Query, you typically follow these steps:
+
+- Import Required Functions and Types: First, you import the necessary functions and types from the @reduxjs/toolkit/query/react package and any custom types you may need for your API responses.
+- Create API Configuration: Use the createApi function to define your API service. This function allows you to set up configuration options such as the reducerPath, baseQuery, and endpoints.
+- Define Endpoints: Inside the endpoints callback function passed to createApi, you define the specific endpoints of your API. Each endpoint is defined using the builder object's methods like query (for GET requests), mutation (for POST, PUT, DELETE, etc. requests), and queryLazy (for lazy loading).
+- Configure Endpoint Functions: For each endpoint, you specify the request URL, query parameters, request body, headers, and any other options necessary for making the request.
+- Export Generated Hooks: Finally, you export the generated hooks for each endpoint. These hooks are auto-generated based on the defined endpoints and can be used in React components to initiate requests and access data.
+
+
+
+***********************************************************
+createApi and fetchBaseQuery
+
+`createApi` and `fetchBaseQuery` are essential parts of the RTK Query library, which is a data fetching and caching toolkit provided by Redux Toolkit. Here's what each of them does:
+
+1. **createApi**:
+   - `createApi` is a function provided by RTK Query to define an API service.
+   - It allows you to specify the base URL and define multiple endpoints for interacting with an external API.
+   - This function sets up the configuration for making requests, managing caching, and handling data from the API.
+   - It generates hooks for each defined endpoint, making it easy to initiate requests and access data in React components.
+
+2. **fetchBaseQuery**:
+   - `fetchBaseQuery` is a utility function provided by RTK Query to create a base query function for making HTTP requests.
+   - It accepts configuration options such as the base URL, default headers, and other fetch options.
+   - This function returns a base query function that can be used internally by RTK Query to make HTTP requests to the specified base URL.
+   - It integrates seamlessly with the `createApi` function to provide a consistent way to make API requests across all defined endpoints.
+
+In summary, `createApi` is used to define the overall API service, including base URL and endpoints, while `fetchBaseQuery` is used to configure the base query function for making HTTP requests to the API. Together, they provide a powerful and efficient way to handle data fetching and caching in Redux applications with RTK Query.
